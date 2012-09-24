@@ -325,6 +325,9 @@ public class FileTransfer extends Plugin {
             // read file and write it into form...
             bytesRead = fileInputStream.read(buffer, 0, bufferSize);
             totalBytes = 0;
+		
+            //Set total bytes to send for progress event
+            progress.setTotal(fixedLength);
 
             long prevBytesRead = 0;
             while (bytesRead > 0) {
